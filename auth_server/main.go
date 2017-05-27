@@ -16,7 +16,7 @@
 
 //go:generate ./gen_version.py
 
-package main // import "github.com/cesanta/docker_auth/auth_server"
+package main // import "github.com/woltere/docker_auth/auth_server"
 
 import (
 	"crypto/tls"
@@ -28,9 +28,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/cesanta/docker_auth/auth_server/server"
-	"github.com/facebookgo/httpdown"
 	"github.com/cesanta/glog"
+	"github.com/facebookgo/httpdown"
+	"github.com/woltere/docker_auth/auth_server/server"
 	fsnotify "gopkg.in/fsnotify.v1"
 )
 

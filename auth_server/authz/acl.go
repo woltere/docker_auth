@@ -10,8 +10,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/cesanta/docker_auth/auth_server/authn"
 	"github.com/cesanta/glog"
+	"github.com/woltere/docker_auth/auth_server/authn"
 )
 
 type ACL []ACLEntry

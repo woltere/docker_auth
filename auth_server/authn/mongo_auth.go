@@ -22,8 +22,8 @@ import (
 	"io"
 	"time"
 
-	"github.com/cesanta/docker_auth/auth_server/mgo_session"
 	"github.com/cesanta/glog"
+	"github.com/woltere/docker_auth/auth_server/mgo_session"
 	"golang.org/x/crypto/bcrypt"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"

@@ -25,9 +25,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cesanta/docker_auth/auth_server/authn"
-	"github.com/cesanta/docker_auth/auth_server/authz"
 	"github.com/docker/libtrust"
+	"github.com/woltere/docker_auth/auth_server/authn"
+	"github.com/woltere/docker_auth/auth_server/authz"
 	yaml "gopkg.in/yaml.v2"
 )
 
@@ -40,6 +40,7 @@ type Config struct {
 	LDAPAuth   *authn.LDAPAuthConfig          `yaml:"ldap_auth,omitempty"`
 	MongoAuth  *authn.MongoAuthConfig         `yaml:"mongo_auth,omitempty"`
 	ExtAuth    *authn.ExtAuthConfig           `yaml:"ext_auth,omitempty"`
+	Keycloak   *authn.KeycloakAuthConfig      `yaml:"keycloak,omitempty"`
 	ACL        authz.ACL                      `yaml:"acl,omitempty"`
 	ACLMongo   *authz.ACLMongoConfig          `yaml:"acl_mongo,omitempty"`
 	ExtAuthz   *authz.ExtAuthzConfig          `yaml:"ext_authz,omitempty"`

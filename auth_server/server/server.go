@@ -28,10 +28,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cesanta/docker_auth/auth_server/authn"
-	"github.com/cesanta/docker_auth/auth_server/authz"
-	"github.com/docker/distribution/registry/auth/token"
 	"github.com/cesanta/glog"
+	"github.com/docker/distribution/registry/auth/token"
+	"github.com/woltere/docker_auth/auth_server/authn"
+	"github.com/woltere/docker_auth/auth_server/authz"
 )
 
 var (
@@ -74,6 +74,13 @@ func NewAuthServer(c *Config) (*AuthServer, error) {
 	}
 	if c.ExtAuth != nil {
 		as.authenticators = append(as.authenticators, authn.NewExtAuth(c.ExtAuth))
+	}
+	if c.Keycloak != nil {
+		kca, err := authn.NewKeycloakAuth(c.Keycloak)
+		if err != nil {
+			return nil, err
+		}
+		as.authenticators = append(as.authenticators, kca)
 	}
 	if c.GoogleAuth != nil {
 		ga, err := authn.NewGoogleAuth(c.GoogleAuth)
